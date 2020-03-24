@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<title>PAY ME.</title>
+<meta charset="utf-8">
+<meta name="author" content="Huangxin, LF112" />
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="Keywords" content="Merger,open source,hxco,hifocus,merge qrcode,qrcode" />
+<meta name="Description" content="Merger is the most simple way to merge your qrcode together." />
+<link rel="shortcut icon" type="image/x-icon" href="https://ae01.alicdn.com/kf/UTB8R57Nn0nJXKJkSaiyq6AhwXXak.jpg">
+
+
+
+<link rel="stylesheet" href="static/css/style.min.css">
+</head>
+<body>
+<script>
+         // Config Part - Please follow the instruction.
+         // Replace with your own qrcode (or paypal) links.
+         // If you don't have a Paypal account, or don't want to use it here, comment out (or just delete) the `var paypal = "xxx" part` ↓.
+ 
+         var wechat = "wxp://f2f0Bh3lGn1kfKLJP4MnO8nI9cOL37pqWRKB";
+         var alipay = "HTTPS://QR.ALIPAY.COM/FKX08742DPNYXU97U3KM8F";
+         var tenpay = "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&u=592015984&a=1&n=%40%E5%98%89%C2%B1%E6%A8%82%E5%AD%90%EF%BD%9E&ac=CAEQ8OSlmgIYh9jK6gU%3D_xxx_sign";
+         var paypal = "https://paypal.me/lemeltop";
+ 
+         // Replace with your id and profile photo link ↓.
+         var myname = "jialezi";
+         var profile ="/logo.png";
+ 
+         // Replace the title and subtitle if preferred (not required) ↓.
+         var title = "选择你的支付方式";
+         var subtitle = "跟随进一步的指示以向" + myname + "付款";
+ 
+         // See if you would like to enable debug mode (as console.log). If debug mode is disabled, the console will be cleared.
+         // To disable it, comment out (or just delete) the `var debugmode = "xxx" part` ↓.
+         var debugmode = "true";
+         // QQ Mobile wouldn't decode qrcode from `data:image`, so for qq mobile only speical qrcode that generate from qrcode api is required.
+         var qrcodeapi = "https://www.zhihu.com/qrcode?url=";
+         // var qrcodeapi = "https://chart.googleapis.com/chart?chs=500x500&cht=qr&chld=L|1&choe=UTF-8&chl="; // Inaccessible in China. Backup use only.
+
+     </script>
+<div class="main" id="h">
+<i id="i"></i>
+<h2 id="name"></h2>
+<p id="description" style="font-weight: lighter"></p>
+
+<div id="pending">
+<p id="depends" class="middlebtn">
+<a href="#showqrcode" class="btn btn-primary" onclick="openwechat()" id="toclick"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-weixinzhifu"></use></svg></a>
+<a href="#showqrcode" class="btn btn-primary" onclick="openalipay()"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-iconfontrectangle390"></use></svg></a>
+ <a href="#showqrcode" class="btn btn-primary" onclick="opentenpay()"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-QQ"></use></svg></a>
+<button class="btn btn-primary" id="paypalbtn" onclick="openbox()"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-paypal"></use></svg></button>
+</p>
+</div>
+
+
+<div class="modal" id="showqrcode">
+<div class="modal-container" role="document">
+<div class="modal-header" id="btncontainer">
+<a href="#" class="btn btn-clear float-right" id="qrcodeclose" aria-label="Close"></a>
+<div id="titleinfo" class="modal-title h5" style="text-align: center"></div>
+</div>
+<div class="modal-body">
+<div class="content" id="qrcontainer">
+<div id="currentqrcode" class="img smaller"></div> 
+<img id="tenpayonly" class="img smaller"> 
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+<script src="static/js/font_974919_xgtacm93vxp.min.js"></script>
+
+
+</body>
+</html>
